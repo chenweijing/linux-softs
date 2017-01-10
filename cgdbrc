@@ -1,0 +1,4 @@
+set autosourcecereload
+# highlight Arrow cterm=bold,underline ctermfg=Red ctermbg=white
+highlight SelectedLineNr ctermfg=LightRed
+highlight Arrow ctermfg=LightRed
