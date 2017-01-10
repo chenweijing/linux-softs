@@ -1,0 +1,1 @@
+双击reg文件,然后在putty终端会多出一个session,选择这个session,就是我们要改变的session.
