@@ -75,6 +75,10 @@ flags = [
     '/usr/soft/caffe/include/', 
     '-isystem', 
     '/usr/soft/caffe/src/caffe/', 
+    '-isystem',
+    '/usr/local/cuda/include/'
+    '-isystem', 
+    '/usr/include/', 
 ]
 
 
