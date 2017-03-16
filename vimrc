@@ -32,7 +32,12 @@ set expandtab
 set number
 set history=50
 set hlsearch
+" 在输入中不断动态匹配字符
 set incsearch
+" 部分匹配也会被高亮显示
+set ignorecase
+" 启用查找方法
+set wrapscan
 set encoding=utf-8
 set mouse=a
 set autoread
@@ -51,9 +56,9 @@ map <F3> <Esc>:tabnext <CR>
 set clipboard+=unnamed 
 
 " ctrl+c 复制选中的文本
-vnoremap <c-c> +y
+" vnoremap <c-c> +y
 " 普通模式下 Ctrl+c 复制文件路径
-nnoremap <c-c> :let @+ = expand('%:p')<cr>
+" nnoremap <c-c> :let @+ = expand('%:p')<cr>
 
 " set nohlsearch
 " hi Search term=bold ctermfg=2 gui=bold guifg=SeaGreen
@@ -118,17 +123,32 @@ highlight YcmWarningLine ctermbg=none
 highlight YcmErrorSection ctermfg = 11
 highlight YcmWarningSection ctermfg = 11
 
-highlight Search ctermbg=grey ctermfg=black
+highlight Search  ctermbg=grey ctermfg=black
+" highlight Search cterm=bold ctermfg=r
 highlight TabLineSel term=bold cterm=bold
 highlight PmenuSel cterm=bold ctermbg=15 ctermfg=3
 highlight SelectedLineNr cterm=bold ctermbg=15 ctermfg=LightBlue
 " highlight PmenuSel cterm=bold ctermbg=darkblue ctermfg=white
 " highlight PmenuSel cterm=bold ctermbg=darkgreen ctermfg=white
 " 当光标一段时间保持不动了，就禁止高亮
-autocmd cursorhold * set nohlsearch
+" autocmd cursorhold * set nohlsearch
 " 当输入查找命令时， 再启用高亮
-noremap n :set hlsearch<cr>n
-noremap N :set hlsearch<cr>N
-noremap / :set hlsearch<cr>/
-noremap ? :set hlsearch<cr>?
-noremap * *:set hlsearch<cr>
+"noremap n :set hlsearch<cr>n
+"noremap N :set hlsearch<cr>N
+"noremap / :set hlsearch<cr>/
+"noremap ? :set hlsearch<cr>?
+"noremap * *:set hlsearch<cr>
+
+" 括号映射
+"inoremap { {}<Esc>i
+"inoremap jj <Esc>
+"inoremap <leader>j  <Esc>==
+"noremap  <leader>j <Esc> ==
+noremap <leader>a ^
+noremap <leader>i $
+
+" FINDING FILES
+set path+=**
+set path+=/usr/include
+set wildmenu
+set ttymouse=xterm2
